@@ -1,13 +1,35 @@
+<!--This project collects data on people's choices regarding a particular issue, organizes feedback data,and visually displays the voting results using 
+percentages.It also identifies the most popular choices from these results.The aim is to help administrators or creators gain a clear understanding of user 
+preferences and other relevant information.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Vote Page</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Your html goes here...</h1>
-    <br>See the <a href="README.md">README</a> for project details
+    <h1>Vote</h1>
+    <hr>
+    <h3>Choose all the things you like:</h3>
+    <input type="checkbox" name="option" id="op1" value="1"><label>Option 1</label><br>
+    <input type="checkbox" name="option" id="op2" value="2"><label>Option 2</label><br>
+    <input type="checkbox" name="option" id="op3" value="3"><label>Option 3</label><br>
+    <input type="checkbox" name="option" id="op4" value="4"><label>Option 4</label><br>
+    
+    <br><br>
+    <button id="submit">Submit vote</button>
+    <hr>
+
+    <h2>Vote Result</h2>
+    <p id="totalVotes">Total Votes:</p>
+    <h3>Vote percent:</h3>
+    <ul id="result"></ul>
+
+    <h3 id="mostVote">The most popular thing is:</h3>
+
+    <button id="clearBtn">Clear</button>
 </body>
 </html>
