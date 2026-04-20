@@ -1,4 +1,4 @@
-//used ap to help debug the code
+//used ai to help debug the code
 let vote = [0, 0, 0, 0]
 let totalVotes = 0
 let max = 0
@@ -31,6 +31,22 @@ document.getElementById("submit").addEventListener("click", function(){
 
         showResult(vote,totalVotes)
 })
+
+document.getElementById("clearBtn").addEventListener("click", function(){
+    let checkboxes = [  
+    document.getElementById("op1"),
+    document.getElementById("op2"),
+    document.getElementById("op3"),
+    document.getElementById("op4")]
+    for(let i = 0;i < checkboxes.length;i++){
+        checkboxes[i].checked = false
+    }
+    vote = [0, 0, 0, 0]
+    totalVotes = 0
+    max = 0
+    showResult(vote,totalVotes)
+})
+
 function showResult(List,sum){
     if (sum != 0){
         let percentList = [0,0,0,0]
@@ -53,17 +69,4 @@ function showResult(List,sum){
         document.getElementById("mostVote").textContent = "The most popular thing is: "
         }
 }
-document.getElementById("clearBtn").addEventListener("click", function(){
-    let checkboxes = [  
-    document.getElementById("op1"),
-    document.getElementById("op2"),
-    document.getElementById("op3"),
-    document.getElementById("op4")]
-    for(let i = 0;i < checkboxes.length;i++){
-        checkboxes[i].checked = false
-    }
-    vote = [0, 0, 0, 0]
-    totalVotes = 0
-    max = 0
-    showResult(vote,totalVotes)
-})
+
