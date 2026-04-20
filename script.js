@@ -24,13 +24,12 @@ document.getElementById("submit").addEventListener("click", function(){
             popularest = vote[i]
             max = i + 1
         }
-        }
         for(let i =0;i < vote.length;i++){
             totalVotes += vote[i]
         }
-
+    }
         showResult(vote,totalVotes)
-})
+    })
 
 document.getElementById("clearBtn").addEventListener("click", function(){
     let checkboxes = [  
