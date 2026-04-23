@@ -2,9 +2,10 @@
 let vote = [0, 0, 0, 0]
 let totalVotes = 0
 let max = 0
+    setOption()
 document.getElementById("submit").addEventListener("click", function(){
-    let options = ["cat","dog","snake","hamster"]
     document.getElementById("remind").textContent = "Choose all the pets you like:"
+    //used to help me figure out the checked option
     let checkboxes = [
     document.getElementById("op1"),
     document.getElementById("op2"),
@@ -24,7 +25,7 @@ document.getElementById("submit").addEventListener("click", function(){
 
     max = findMax(vote)
 
-        if (totalVotes != 0){
+    if (totalVotes != 0){
         let percentList = [0,0,0,0]
         for(let i=0;i < vote.length; i++){
         percentList[i] = (
@@ -36,6 +37,8 @@ document.getElementById("submit").addEventListener("click", function(){
     }
         document.getElementById("totalVotes").textContent = "Total Votes: "+ totalVotes
         document.getElementById("mostVote").textContent = "The most popular thing is: "+ options[max-1]
+        document.getElementById("msg").textContent = "The most popular thing is: "+ options[max-1]
+
         }
     })
 
@@ -71,3 +74,15 @@ function findMax(voteList){
     return max;
 }
 
+function setOption(){
+    let option = ["","","",""]
+    let options = 0
+    for(let i =0;i < option.length;i++){
+        options = prompt("Pls input "+option.length+" options you want to investigate")
+        options = options.charAt(0).toUpperCase() + options.slice(1).toLowerCase();
+        option[i] = options
+    }
+    for(let i =0;i < option.length;i++){
+        document.getElementById('op'+(i+1)).textContent = option[i]
+    }
+}
