@@ -2,9 +2,25 @@
 let vote = [0, 0, 0, 0]
 let totalVotes = 0
 let max = 0
-    setOption()
+let options = ["Cat","Dog","Snake","Hamster"]
+
+let ask = prompt("What type of things do you want to investigate:")
+document.getElementById("remind").textContent = "Choose all the "+ask+" you like:"
+
+
+    let term = 0
+    for(let i =0;i < options.length;i++){
+        term = prompt("Pls input "+options.length+" options you want to investigate")
+        term = term.charAt(0).toUpperCase() + term.slice(1).toLowerCase();
+        options[i] = term
+    }
+    document.getElementById("op2").textContent = options[1]
+    for(let i =0;i < option.length;i++){
+        document.getElementById('op'+(i+1)).textContent = options[i]
+    }
+
 document.getElementById("submit").addEventListener("click", function(){
-    document.getElementById("remind").textContent = "Choose all the pets you like:"
+    document.getElementById("remind").textContent = "Choose all the "+ask+" you like:"
     //used to help me figure out the checked option
     let checkboxes = [
     document.getElementById("op1"),
@@ -72,17 +88,4 @@ function findMax(voteList){
         }
     }
     return max;
-}
-
-function setOption(){
-    let option = ["","","",""]
-    let options = 0
-    for(let i =0;i < option.length;i++){
-        options = prompt("Pls input "+option.length+" options you want to investigate")
-        options = options.charAt(0).toUpperCase() + options.slice(1).toLowerCase();
-        option[i] = options
-    }
-    for(let i =0;i < option.length;i++){
-        document.getElementById('op'+(i+1)).textContent = option[i]
-    }
 }
