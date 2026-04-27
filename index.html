@@ -12,13 +12,13 @@ preferences and other relevant information.-->
 </head>
 <body>
     <div id="countainer">
-    <h1>Vote</h1>
+    <h1>Vote<button id="setBtn">Start a new vote</button></h1>
     <hr>
     <h3 id="remind">Choose all the things you like:</h3>
-    <input type="checkbox" name="option" id="op1"><label for="op1">Cat</label><br>
-    <input type="checkbox" name="option" id="op2"><label for="op2">Dog</label><br>
-    <input type="checkbox" name="option" id="op3"><label for="op3">Snake</label><br>
-    <input type="checkbox" name="option" id="op4"><label for="op4">Hamster</label><br>
+    <input type="checkbox" name="option" id="op1"><label id="input1" for="op1">Cat</label><br>
+    <input type="checkbox" name="option" id="op2"><label id="input2" for="op2">Dog</label><br>
+    <input type="checkbox" name="option" id="op3"><label id="input3" for="op3">Snake</label><br>
+    <input type="checkbox" name="option" id="op4"><label id="input4" for="op4">Hamster</label><br>
     
     <br>
     <button id="submit">Submit vote</button>
@@ -37,6 +37,9 @@ preferences and other relevant information.-->
     <h3 id="mostVote">The most popular thing is:</h3>
 
     <button id="clearBtn">Clear</button>
+    <hr id="show">
+    <h2 id="display">The most popular thing of each round:</h2>
+    <ul id="record"></ul>
     </div>
 </body>
 </html>
